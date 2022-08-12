@@ -10,4 +10,6 @@ GB2312 中文只需要 2 个字节，而 UTF8 中文要 3 个字节。
 
 1. 使用 Biterm Topic Model 生成 256 个主题 https://www.zhihu.com/question/34801598 ，这样就可以用 1 个字节来表示是什么词表
 2. 把训练语料分成不同主题
-3. 使用 https://crates.io/crates/rmw-utf8 的算法统计不同主题的高频词，然后压缩
+3. 使用 https://crates.io/crates/rmw-utf8 的算法统计不同主题的高频词，生成主题字典
+4. 扫描有待压缩的文本，统计出现的主题高频词，判断用什么主题字典压缩
+5. 压缩
